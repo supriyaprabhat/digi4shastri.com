@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digi4shastri</title>
+  <link rel="stylesheet" href="/src/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://kit.fontawesome.com/4d509971f0.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="output.css">
+</head>
+
+<body x-data class="h-screen bg-white">
+  <header class="flex flex-row max-md:hidden">
+    <!-- top header -->
+    <div class="w-full">
+      <div class="flex justify-between bg-[#fedf57] w-full py-3 md:px-20 px-4 items-center">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-phone text-[#D81B26]"></i>
+          <p class="text-lg">+91 8289898989 |</p><i class="fa-solid fa-envelope text-[#D81B26]"></i>
+          <p class="text-lg">Info@xyz.com</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" class="text-lg border-none outline-none bg-transparent max-w-20 placeholder:text-black"
+            placeholder="Search"><i class="fa-solid fa-globe text-[#D81B26]"></i>
+          <select class="text-lg border-none outline-none bg-transparent">
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+          </select>
+        </div>
+
+        <!-- main header -->
+      </div>
+
+      <!-- main header -->
+      <nav class="nav-main  lg:px-20 px-4">
+        <img src="images/logo.png" style="max-width: 200px; width: 60vw;" alt="">
+        <ul class="nav-list md:gap-2 lg:gap-3 xl:gap-5">
+          <li class="nav-item main">
+            <a href="index.html">Home</a>
+          </li>
+
+
+          <!-- 2nd -->
+          <li class="nav-item main">
+            <a href="index.html">About</a>
+          </li>
+
+          <!-- 3rd -->
+          <li class="nav-item main">
+            <a href="index.html">Carporate</a>
+          </li>
+
+          <!-- 4th -->
+          <li class="nav-item main">
+            <a href="index.html">Workshope</a>
+          </li>
+          <!-- 5th -->
+          <li class="nav-item main" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+            <a href="" @click.prevent="open = !open">Our Center</a>
+            <ul x-show="open" x-transition:enter="submenu-enter" x-transition:leave="submenu-leave" class="submenu">
+              <li><a href="">Center1</a></li>
+              <li><a href="">Center2</a></li>
+              <li><a href="">Center3</a></li>
+
+            </ul>
+          </li>
+          <!-- 6th -->
+          <li class="nav-item main" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+            <a href="" @click.prevent="open = !open">Courses </a>
+            <ul x-show="open" x-transition:enter="submenu-enter" x-transition:leave="submenu-leave" class="submenu">
+              <li><a href="">Courses1</a></li>
+              <li><a href="">Courses2</a></li>
+              <li><a href="">Courses3</a></li>
+            </ul>
+          </li>
+
+          <!-- 7th -->
+          <li class="nav-item main">
+            <a href="index.html">Student Corner</a>
+          </li>
+
+          <!-- 8th -->
+          <li class="nav-item main">
+            <a href="index.html">Blogs</a>
+          </li>
+
+          <!-- 9th -->
+          <li class="nav-item main">
+            <a href="index.html">Contact us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- Mobile Header  -->
+  <header class="w-full grid grid-cols-2 relative bg-[#1ABC9C] md:hidden">
+    <div class="p-5 col-span-1">
+      <a href="index.php"> <img src="images/logo.png" class="w-full max-w-44 object-contain" alt=""></a>
+    </div>
+    <div class="off-screen-menu p-5 " style="z-index:89">
+      <img src="images/logo.png" class="w-full max-w-44 object-contain mx-auto" alt="">
+      <ul class="w-full mt-2 open-dropdown">
+        <li class="hover:text-[#0C5647] py-2"><a href="index.html">Home</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">About</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Corporate</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Workshop</a></li>
+
+        <li class="duration-700 transition-all">
+          <div class="flex justify-between">
+            <a class="hover:text-[#0C5647]">Our Center</a>
+            <p class="hamMenuDropdown p-0.5 px-1 rounded-md   duration-700 cursor-pointer">
+              <i class="fa-solid fa-circle-chevron-down"></i>
+            </p>
+          </div>
+          <ul class="hamDropdownContainer pl-5">
+            <li><a href="" class="hover:text-[#0C5647]">center1</a></li>
+            <li><a href="" class="hover:text-[#0C5647]">center2</a></li>
+            <li><a href="" class="hover:text-[#0C5647]">Center1</a></li>
+
+          </ul>
+        </li>
+        <li class="duration-700 transition-all">
+          <div class="flex justify-between">
+            <a class="hover:text-[#0C5647]">Courses</a>
+            <p class="hamMenuDropdown p-0.5 px-1 rounded-md   duration-700 cursor-pointer">
+              <i class="fa-solid fa-circle-chevron-down"></i>
+            </p>
+          </div>
+          <ul class="hamDropdownContainer pl-5">
+            <li><a href="" class="hover:text-[#0C5647]">course1</a></li>
+            <li><a href="" class="hover:text-[#0C5647]">course2</a></li>
+            <li><a href="" class="hover:text-[#0C5647]">Course1</a></li>
+          </ul>
+        </li>
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Student Corner</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Blogs</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Contact Us</a></li>
+      </ul>
+    </div>
+    <nav>
+      <div class="ham-menu" style="z-index: 90;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- section1 -->
+
+  <section class=" relative border-t border-[#fffffff3] bg-main overflow-hidden">
+    <div class="z-20 relative">
+      <div class="flex md:px-20 p-4  justify-between max-md:flex-wrap-reverse items-center  w-full ">
+        <div class="space-y-9 max-md:space-y-7 md:w-[54%] w-full">
+          <h4 class="font-bold text-2xl md:text-3xl">40+ Centers</h4>
+          <h1 class="text-white font-semibold lg:text-6xl md:text-5xl text-4xl">Asia's Leading Brand In Digital Career
+            Training</h1>
+          <p class="text-white lg:text-2xl md:text-lg text-xl font-medium">Advance your career In Data Science and
+            Digital
+            Marketing with Most trusted brand in Digital Education.</p>
+          <div class="flex items-center gap-5">
+            <a href="" class="btn-p cursor-pointer">Explore Courses</a>
+            <a href="">
+              <p class="text-lg text-yellow-500 flex hover:text-white transition-all cursor-pointer items-center"><i
+                  class="fa-regular fa-circle-play text-3xl"></i> &nbsp; Watch Now</p>
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-[38%] md:w-[43%] w-[80%] mx-auto">
+          <img src="images/banner/boy.png" class="h-fit w-full" alt="">
+        </div>
+      </div>
+
+      <!-- company's slider -->
+      <h4 class="font-bold text-2xl text-center md:text-3xl my-14 max-md:my-5">DIGI4SHASTRI Alumni Work At</h4>
+
+      <div class=" marqueeContainer w-full py-2 sm:py-3 text-white overflow-hidden relative">
+
+        <div id="" class="marqueeContent whitespace-nowrap  flex md:gap-8 justify-between z-20">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl1.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl2.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl3.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl4.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl3.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl1.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl2.png" alt="">
+        </div>
+      </div>
+
+      <div class=" w-full marqueeContainer py-2 mt-8 mb-20  sm:py-3 text-white overflow-hidden relative">
+
+        <div id="" class="whitespace-nowrap marqueeContent flex md:gap-8 justify-between z-20">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl1.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl2.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl3.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl4.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl3.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl1.png" alt="">
+          <img class="w-auto h-10 mx-6" src="images/clients/cl2.png" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- arrow -->
+    <img src="images/banner/arrow.png" class="absolute top-0 -left-12" alt="">
+  </section>
+  <!-- why choose section2-->
+
+  <section class="flex flex-col items-center text-center gap-y-5 sm:p-20 px-6 py-11 bg-grid">
+    <img src="images/home/trusted.png" alt="">
+    <h3 class="text-2xl font-bold ">Asia’s Most Trusted Brand</h3>
+    <h2 class="text-red-700 font-semibold text-4xl">Why Choose Digi4shastri?</h2>
+    <p class="text-xl max-w-2xl">Digi4shastri is awarded as the “Most Trusted Brand in Digital Education” by WCRC
+      (Leading Marketing Research Firm and Magazine).</p>
+  </section>
+
+  <!-- section3 -->
+  <section class="flex md:p-32 py-16 px-4 gap-y-5 justify-between relative flex-wrap bg-circular">
+
+    <div
+      class="bg-white p-6 rounded-lg shadow-2xl transition-all hover:scale-105 space-y-4 md:w-[31%] sm:w-[48%] w-full">
+      <img class="w-12" src="images/icons/certified.png" alt="">
+      <h3 class="font-medium text-2xl">GET CERTIFIED</h3>
+      <p>
+        Our curriculum is built on suggestions from over 450 corporates across Asia, Get certified to add an edge to
+        your CV.
+      </p>
+    </div>
+
+    <div
+      class="p-6 transition-all hover:scale-105 bg-white rounded-lg shadow-2xl space-y-4 md:w-[31%] sm:w-[48%] w-full">
+      <img class="w-12" src="images/icons/award.png" alt="">
+      <h3 class="font-medium text-2xl">AWARD-WINNIN</h3>
+      <p>
+        Learn through 24*7 interactive LMS with PPTs, Videos, Assignments, Case Studies & Quizzes along with a progress
+        tracker.
+      </p>
+    </div>
+
+    <div
+      class="p-6 bg-white transition-all hover:scale-105 rounded-lg shadow-2xl space-y-4 md:w-[31%] sm:w-[48%] w-full">
+      <img class="w-12" src="images/icons/depth.png" alt="">
+      <h3 class="font-medium text-2xl">MOST IN-DEPTH PROGRAM</h3>
+      <p>
+        50+ Modules, 321+ learning hours, followed by 2 online certification tests. A training program that sets a
+        benchmark.
+      </p>
+    </div>
+  </section>
+
+  <!-- section4 -->
+  <section class="md:p-20 py-16 px-4 gap-y-5 relative ">
+    <div class="bg-circular2 absolute -bottom-36 -left-36 h-[500px] w-[500px]"></div>
+    <h2 class="text-red-700 font-semibold text-5xl max-sm:text-4xl text-center my-3">Our Programs</h2>
+
+    <!-- slider -->
+    <div class="swiper2 max-w-5xl mx-auto w-full h-auto mt-11 overflow-hidden relative">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper text-white">
+        <div
+          class="swiper-slide bg-main2 h-auto p-6 w-full rounded-2xl shadow-lg border-4 border-white overflow-hidden">
+          <div class="flex ">
+            <div class="border-t border-l w-full border-white p-3">
+              <img src="images/icons/setting.png" alt="">
+            </div>
+            <h3 class="text-2xl ml-3 font-bold text-white">01</h3>
+          </div>
+          <div class="w-32 my-5 border-t-4 border-yellow-500"></div>
+          <h2 class="text-3xl font-bold text-black">Digital <br> Marketing</h2>
+          <p class="text-lg font-medium my-5 text-white">Boost Brand Awareness Digitally Today</p>
+          <a href="" class="text-yellow-300 text-lg font-extrabold hover:text-white transition-all cursor-pointer">See
+            Programs &nbsp; <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div
+          class="swiper-slide bg-main2 h-auto p-6 w-full rounded-2xl shadow-lg border-4 border-white overflow-hidden">
+          <div class="flex ">
+            <div class="border-t border-l w-full border-white p-3">
+              <img src="images/icons/setting.png" alt="">
+            </div>
+            <h3 class="text-2xl ml-3 font-bold text-white">01</h3>
+          </div>
+          <div class="w-32 my-5 border-t-4 border-yellow-500"></div>
+          <h2 class="text-3xl font-bold text-black">Digital <br> Marketing</h2>
+          <p class="text-lg font-medium my-5 text-white">Boost Brand Awareness Digitally Today</p>
+          <a href="" class="text-yellow-300 text-lg font-extrabold hover:text-white transition-all cursor-pointer">See
+            Programs &nbsp; <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div
+          class="swiper-slide bg-main2 h-auto p-6 w-full rounded-2xl shadow-lg border-4 border-white overflow-hidden">
+          <div class="flex ">
+            <div class="border-t border-l w-full border-white p-3">
+              <img src="images/icons/setting.png" alt="">
+            </div>
+            <h3 class="text-2xl ml-3 font-bold text-white">01</h3>
+          </div>
+          <div class="w-32 my-5 border-t-4 border-yellow-500"></div>
+          <h2 class="text-3xl font-bold text-black">Digital <br> Marketing</h2>
+          <p class="text-lg font-medium my-5 text-white">Boost Brand Awareness Digitally Today</p>
+          <a href="" class="text-yellow-300 text-lg font-extrabold hover:text-white transition-all cursor-pointer">See
+            Programs &nbsp; <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div
+          class="swiper-slide bg-main2 h-auto p-6 w-full rounded-2xl shadow-lg border-4 border-white overflow-hidden">
+          <div class="flex ">
+            <div class="border-t border-l w-full border-white p-3">
+              <img src="images/icons/setting.png" alt="">
+            </div>
+            <h3 class="text-2xl ml-3 font-bold text-white">01</h3>
+          </div>
+          <div class="w-32 my-5 border-t-4 border-yellow-500"></div>
+          <h2 class="text-3xl font-bold text-black">Digital <br> Marketing</h2>
+          <p class="text-lg font-medium my-5 text-white">Boost Brand Awareness Digitally Today</p>
+          <a href="" class="text-yellow-300 text-lg font-extrabold hover:text-white transition-all cursor-pointer">See
+            Programs &nbsp; <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="mt-14 text-center">
+        <div class="swiper-pagination2"></div>
+      </div>
+      <!-- <div class="flex  mt-8 justify-between z-40 w-full absolute top-[49%]  left-0">
+        <div id="slide-prev2"><i
+            class="fa-solid fa-circle-chevron-left text-5xl text-[#F20C1F] bg-white hover:text-black rounded-full opacity-55 "></i>
+        </div>
+        <div id="slide-next2"><i
+            class="fa-solid fa-circle-chevron-right text-5xl text-[#F20C1F] bg-white hover:text-black rounded-full opacity-55 "></i>
+        </div>
+      </div>-->
+    </div>
+  </section>
+
+  <!-- section5 -->
+
+  <section class="md:p-20 py-16 px-4">
+    <div
+      class="flex rounded-2xl border-4 gap-3 border-white shadow-md items-center justify-between md:px-20 py-10 px-8 bg-main">
+      <div>
+        <h2 class="text-3xl font-semibold md:text-6xl mb-4">Still Confused?</h2> <a href=""
+          class="text-white hover:text-yellow-500 text-lg cursor-pointer md:text-xl">Take the Next Step With Free Demo
+          &nbsp; <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <img src="images/home/demo.png" class="h-auto w-[25vw] max-w-64 max-md:hidden" alt="">
+    </div>
+  </section>
+
+
+  <!-- section6 -->
+  <section class="flex  justify-between items-center">
+    <div class="md:p-20 md:py-10 p-5  max-w-[49vw]">
+      <h2 class="text-red-700 font-semibold md:text-3xl lg:text-6xl text-2xl">DIGI4SHASTRI <br> ADVANTAGE</h2>
+    </div>
+    <div class="w-[50vw] h-[25vw] lg:w-[500px] lg:h-[250px] relative  flex justify-center ">
+      <div
+        class="absolute top-0 left-0 w-0 h-0 lg:border-l-[250px] lg:border-r-[250px] lg:border-b-[250px] border-l-[25vw] border-r-[25vw] border-b-[25vw] z-10 border-transparent border-b-[#0C5647]">
+      </div>
+      <img class="relative z-20 w-[40%] h-[80%] mt-[10%]" src="images/home/upper-arrow.png" alt="">
+    </div>
+  </section>
+
+  <!-- section7 -->
+  <section class="bg-main2 md:p-24 py-8 px-6 -mt-1">
+    <h2 class="text-3xl font-semibold md:text-5xl mb-4">Student Life at Digi4shastri</h2>
+    <p class="text-white md:text-xl max-w-4xl text-lg leading-6">Life at Digishastri is full of energy and culture.
+      Digishastri
+      students not only learn but also make lasting networks through events, surprise pizza parties and celebrations.
+      Learn more about how we jazz up our learning experience.</p>
+    <!-- slider -->
+
+    <div class="swiper2 max-w-5xl mx-auto w-full h-auto md:mt-32 mt-14 overflow-hidden relative">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper ">
+        <div
+          class="swiper-slide group hover:shadow-xl bg-[#159B80] h-auto w-full  border transition-all border-white relative">
+          <div class="w-full h-52 overflow-hidden">
+            <img class="w-full h-full group-hover:scale-110 transition-all object-cover z-10" src="images/home/img1.png"
+              alt="">
+          </div>
+          <div class="w-[80%] mx-[10%] text-center sticky py-2 -mt-7 text-xl font-medium  bg-[#159B80] z-30">Navratri
+          </div>
+          <div class=" w-full px-5 ">
+            <h3 class="text-white my-2 text-2xl text-center md:text-3xl font-semibold ">Dance with Devi</h3>
+            <p class="text-white text-center text-lg mb-4">17 April 2024</p>
+            <a href="">
+              <div
+                class="rounded-full transition-all text-center w-16 h-16 bg-yellow-400 leading-5 text-sm font-semibold pt-2 mx-auto sticky -mb-8 group-hover:bg-black group-hover:text-white cursor-pointer">
+                View Event</div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="swiper-slide group hover:shadow-xl bg-[#159B80] h-auto w-full  border transition-all border-white relative">
+          <div class="w-full h-52 overflow-hidden">
+            <img class="w-full h-full group-hover:scale-110 transition-all object-cover z-10" src="images/home/img1.png"
+              alt="">
+          </div>
+          <div class="w-[80%] mx-[10%] text-center sticky py-2 -mt-7 text-xl font-medium  bg-[#159B80] z-30">Games
+            night'23</div>
+          <div class=" w-full px-5 ">
+            <h3 class="text-white my-2 text-2xl text-center md:text-3xl font-semibold ">Level up your fun!</h3>
+            <p class="text-white text-center text-lg mb-4">30 April 2024</p>
+            <a href="">
+              <div
+                class="rounded-full transition-all text-center w-16 h-16 bg-yellow-400 leading-5 text-sm font-semibold pt-2 mx-auto sticky -mb-8 group-hover:bg-black group-hover:text-white cursor-pointer">
+                View Event</div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="swiper-slide group hover:shadow-xl bg-[#159B80] h-auto w-full  border transition-all border-white relative">
+          <div class="w-full h-52 overflow-hidden">
+            <img class="w-full h-full group-hover:scale-110 transition-all object-cover z-10" src="images/home/img1.png"
+              alt="">
+          </div>
+          <div class="w-[80%] mx-[10%] text-center sticky py-2 -mt-7 text-xl font-medium  bg-[#159B80] z-30">Flea Mania
+          </div>
+          <div class=" w-full px-5 ">
+            <h3 class="text-white my-2 text-2xl text-center md:text-3xl font-semibold ">Jump into fun!</h3>
+            <p class="text-white text-center text-lg mb-4">7 may 2024</p>
+            <a href="">
+              <div
+                class="rounded-full transition-all text-center w-16 h-16 bg-yellow-400 leading-5 text-sm font-semibold pt-2 mx-auto sticky -mb-8 group-hover:bg-black group-hover:text-white cursor-pointer">
+                View Event</div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="swiper-slide group hover:shadow-xl bg-[#159B80] h-auto w-full  border transition-all border-white relative">
+          <div class="w-full h-52 overflow-hidden">
+            <img class="w-full h-full group-hover:scale-110 transition-all object-cover z-10" src="images/home/img1.png"
+              alt="">
+          </div>
+          <div class="w-[80%] mx-[10%] text-center sticky py-2 -mt-7 text-xl font-medium  bg-[#159B80] z-30">Navratri'23
+          </div>
+          <div class=" w-full px-5 ">
+            <h3 class="text-white my-2 text-2xl text-center md:text-3xl font-semibold ">Dance with Devi</h3>
+            <p class="text-white text-center text-lg mb-4">17 April 2024</p>
+            <a href="">
+              <div
+                class="rounded-full transition-all text-center w-16 h-16 bg-yellow-400 leading-5 text-sm font-semibold pt-2 mx-auto sticky -mb-8 group-hover:bg-black group-hover:text-white cursor-pointer">
+                View Event</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-24">
+        <div class="swiper-pagination2"></div>
+      </div>
+      <!-- <div class="flex  mt-8 justify-between z-40 w-full absolute top-[49%]  left-0">
+        <div id="slide-prev2"><i
+            class="fa-solid fa-circle-chevron-left text-5xl text-[#F20C1F] bg-white hover:text-black rounded-full opacity-55 "></i>
+        </div>
+        <div id="slide-next2"><i
+            class="fa-solid fa-circle-chevron-right text-5xl text-[#F20C1F] bg-white hover:text-black rounded-full opacity-55 "></i>
+        </div>
+      </div>
+       </div> -->
+    </div>
+  </section>
+
+  <!-- section8 -->
+  <section class="bg-grid w-full flex justify-center flex-wrap items-center pb-8 max-md:p-4">
+    <div class="md:w-[49%] md:p-14 py-8 p-6 w-full max-w-2xl">
+      <h3 class="text-xl sm:text-2xl font-bold">Seeking guidance on choosing your path? Schedule a consultation for
+        personalized assistance.</h3>
+      <h2 class="text-red-700 font-semibold md:text-4xl lg:text-6xl max-sm:text-3xl  my-7 md:my-16">Enquiry Now</h2>
+      <div class="flex gap-4 md:gap-10 items-center my-4 md:my-10">
+        <img class="w-16 h-16" src="images/home/call-i.png" alt="">
+        <div>
+          <p class="text-lg md:text-xl font-bold text-yellow-400 ">Call Us</p>
+          <a class="text-lg md:text-xl font-bold" href="">+911234567890</a>
+        </div>
+      </div>
+
+      <div class="flex gap-4 md:gap-10 items-center my-4 md:my-10">
+        <img class="w-16 h-16" src="images/home/msg-i.png" alt="">
+        <div>
+          <p class="text-lg md:text-xl font-bold text-yellow-400">Email Address</p>
+          <a class="text-lg md:text-xl font-bold" href="">info@digi4shastri.com</a>
+        </div>
+      </div>
+
+      <div class="flex gap-4 md:gap-10 items-center my-4 md:my-10">
+        <img class="w-16 h-16" src="images/home/location-i.png" alt="">
+        <div>
+          <p class=" text-yellow-400 text-lg md:text-xl font-bold">Country</p>
+          <a class="text-lg md:text-xl font-bold" href="">India</a>
+        </div>
+      </div>
+    </div>
+    <!-- form section -->
+    <div class="md:w-[49%] w-full max-md:p-7 max-w-2xl md:mr-4">
+      <img src="images/home/phone-icon.png" class="mx-auto max-w-40 w-[26vw]" alt="">
+      <div class="max-w-xl w-full relative ">
+        <form class="p-7 bg-main2 w-full sticky z-20 " action="">
+
+          <h3 class="text-xl sm:text-2xl font-bold mb-10">Get a Consultation</h3>
+          <div class="mb-8 space-y-2 flex flex-col">
+            <label for="name" class="text-lg font-bold">NAME</label>
+            <input type="text" name="name" id="name" class="p-3 bg-[#8dc2b7]">
+          </div>
+
+          <div class="mb-8 space-y-2 flex flex-col">
+            <label for="email" class="text-lg font-bold">EMAIL</label>
+            <input type="text" name="email" id="email" class="p-3 bg-[#8dc2b7]">
+          </div>
+
+          <div class="mb-8 space-y-2 flex flex-col">
+            <label for="name" class="text-lg font-bold">MESSAGE</label>
+            <textarea name="message" id="message" class="p-3 bg-[#8dc2b7]"></textarea>
+          </div>
+
+          <button class="btn-p w-full !border-2 !border-zinc-900" type="submit">Get a Consultation</button>
+        </form>
+
+        <div class="w-full h-full absolute top-5 -right-5 z-10 bg-oran"></div>
+      </div>
+      <img src="images/home/phone-icon.png" class="rotate-180 max-w-44 w-[26vw] stickey -ml-24 -mt-20" alt="">
+    </div>
+  </section>
+
+  <!-- section9 testimonials -->
+  <section>
+    <div class="md:p-20 p-6">
+      <h2 class="text-red-700 font-semibold text-4xl md:text-5xl ">What Our Trainees Have To Say</h2>
+      <p class="text-lg sm:text-xl max-w-4xl">Our Courses have Been Receiving an average rating of 9.4/10 from our
+        course participants. Till date, Digiperform has trained more than 75,000+ individuals.</p>
+    </div>
+
+    <div class="flex flex-wrap gap-y-4 md:gap-y-8 justify-between md:p-20 p-6 py-9 bg-main2">
+      <!-- cards -->
+      <div
+        class="p-4 rounded-xl shadow-lg shadow-[#366a60] md:w-[31%] sm:w-[48%] w-full bg-white border border-[#1ABC9C]">
+        <div class="flex items-center gap-3 mb-3">
+          <img class="w-12 h-12 rounded-full" src="images/testimonials/client1.png" alt="">
+          <h4 class="text-2xl font-semibold">Kimz Hnamte</h4>
+        </div>
+        <p>If you are looking for an institute which helps you learn digital marketing, then you must consider
+          Digishastri. They are the best in this field.</p>
+        <div class="flex mt-2 justify-end"><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""></div>
+      </div>
+
+      <!-- cards -->
+      <div
+        class="p-4 rounded-xl shadow-lg shadow-[#366a60] md:w-[31%] sm:w-[48%] w-full bg-white border border-[#1ABC9C]">
+        <div class="flex items-center gap-3 mb-3">
+          <img class="w-12 h-12 rounded-full" src="images/testimonials/client1.png" alt="">
+          <h4 class="text-2xl font-semibold">Kimz Hnamte</h4>
+        </div>
+        <p>If you are looking for an institute which helps you learn digital marketing, then you must consider
+          Digishastri. They are the best in this field.</p>
+        <div class="flex mt-2 justify-end"><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""></div>
+      </div>
+
+      <!-- cards -->
+      <div
+        class="p-4 rounded-xl shadow-lg shadow-[#366a60] md:w-[31%] sm:w-[48%] w-full bg-white border border-[#1ABC9C]">
+        <div class="flex items-center gap-3 mb-3">
+          <img class="w-12 h-12 rounded-full" src="images/testimonials/client1.png" alt="">
+          <h4 class="text-2xl font-semibold">Kimz Hnamte</h4>
+        </div>
+        <p>If you are looking for an institute which helps you learn digital marketing, then you must consider
+          Digishastri. They are the best in this field.</p>
+        <div class="flex mt-2 justify-end"><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""></div>
+      </div>
+
+      <!-- cards -->
+      <div
+        class="p-4 rounded-xl shadow-lg shadow-[#366a60] md:w-[31%] sm:w-[48%] w-full bg-white border border-[#1ABC9C]">
+        <div class="flex items-center gap-3 mb-3">
+          <img class="w-12 h-12 rounded-full" src="images/testimonials/client1.png" alt="">
+          <h4 class="text-2xl font-semibold">Kimz Hnamte</h4>
+        </div>
+        <p>If you are looking for an institute which helps you learn digital marketing, then you must consider
+          Digishastri. They are the best in this field.</p>
+        <div class="flex mt-2 justify-end"><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""></div>
+      </div>
+
+      <!-- cards -->
+      <div
+        class="p-4 rounded-xl shadow-lg shadow-[#366a60] md:w-[31%] sm:w-[48%] w-full bg-white border border-[#1ABC9C]">
+        <div class="flex items-center gap-3 mb-3">
+          <img class="w-12 h-12 rounded-full" src="images/testimonials/client1.png" alt="">
+          <h4 class="text-2xl font-semibold">Kimz Hnamte</h4>
+        </div>
+        <p>If you are looking for an institute which helps you learn digital marketing, then you must consider
+          Digishastri. They are the best in this field.</p>
+        <div class="flex mt-2 justify-end"><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""></div>
+      </div>
+
+      <!-- cards -->
+      <div
+        class="p-4 rounded-xl shadow-lg shadow-[#366a60] md:w-[31%] sm:w-[48%] w-full bg-white border border-[#1ABC9C]">
+        <div class="flex items-center gap-3 mb-3">
+          <img class="w-12 h-12 rounded-full" src="images/testimonials/client1.png" alt="">
+          <h4 class="text-2xl font-semibold">Kimz Hnamte</h4>
+        </div>
+        <p>If you are looking for an institute which helps you learn digital marketing, then you must consider
+          Digishastri. They are the best in this field.</p>
+        <div class="flex mt-2 justify-end"><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""></div>
+      </div>
+
+      <!-- cards -->
+      <div
+        class="p-4 rounded-xl shadow-lg shadow-[#366a60] md:w-[31%] sm:w-[48%] w-full bg-white border border-[#1ABC9C]">
+        <div class="flex items-center gap-3 mb-3">
+          <img class="w-12 h-12 rounded-full" src="images/testimonials/client1.png" alt="">
+          <h4 class="text-2xl font-semibold">Kimz Hnamte</h4>
+        </div>
+        <p>If you are looking for an institute which helps you learn digital marketing, then you must consider
+          Digishastri. They are the best in this field.</p>
+        <div class="flex mt-2 justify-end"><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""></div>
+      </div>
+
+      <!-- cards -->
+      <div
+        class="p-4 rounded-xl shadow-lg shadow-[#366a60] md:w-[31%] sm:w-[48%] w-full bg-white border border-[#1ABC9C]">
+        <div class="flex items-center gap-3 mb-3">
+          <img class="w-12 h-12 rounded-full" src="images/testimonials/client1.png" alt="">
+          <h4 class="text-2xl font-semibold">Kimz Hnamte</h4>
+        </div>
+        <p>If you are looking for an institute which helps you learn digital marketing, then you must consider
+          Digishastri. They are the best in this field.</p>
+        <div class="flex mt-2 justify-end"><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""></div>
+      </div>
+
+      <!-- cards -->
+      <div
+        class="p-4 rounded-xl shadow-lg shadow-[#366a60] md:w-[31%] sm:w-[48%] w-full bg-white border border-[#1ABC9C]">
+        <div class="flex items-center gap-3 mb-3">
+          <img class="w-12 h-12 rounded-full" src="images/testimonials/client1.png" alt="">
+          <h4 class="text-2xl font-semibold">Kimz Hnamte</h4>
+        </div>
+        <p>If you are looking for an institute which helps you learn digital marketing, then you must consider
+          Digishastri. They are the best in this field.</p>
+        <div class="flex mt-2 justify-end"><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""><img class="w-5"
+            src="images/icons/Star.png" alt=""><img class="w-5" src="images/icons/Star.png" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <!-- top footer -->
+    <div class="flex gap-y-5 flex-wrap justify-between lg:p-20 md:p-14 p-8">
+      <div class="lg:w-[19%] sm:w-[32%] w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Company</h4>
+        <ul class="space-y-2">
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>About Us</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Corporate</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Training</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Contact Us</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Refer & Earn</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:w-[19%] sm:w-[32%] w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Career</h4>
+        <ul class="space-y-2">
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Corporate</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Training</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Contact Us</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Refer & Earn</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:w-[19%] sm:w-[32%] w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Corporate</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Training</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="lg:w-[19%]  w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Approved by</h4>
+        <img src="images/home/foot1.png" alt="">
+
+      </div>
+
+      <div class="lg:w-[19%] w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Google Partner</h4>
+        <img src="images/home/foot2.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="bg-grid md:p-20 p-7">
+      <h4 class="text-2xl font-bold mb-5">Digital Marketing Programs</h4>
+      <p class="text-md font-semibold mb-7">Post Graduation in Digital Marketing | Online Digital Marketing Courses in
+        India</p>
+      <h4 class="text-2xl font-bold mb-5">Short Term Certifications</h4>
+      <p class="text-md font-semibold mb-7">All Digital Marketing Certifications | Social Media Marketing Course | SEO
+        Course Online | Performance Marketing Course Online | Content Writing Course | E-Commerce Course | Website
+        Development Course | Email Marketing Course | Instagram Marketing Course | Conversion Rate Optimisation
+        Course | Interview Preparation Course</p>
+
+      <h4 class="text-center text-red-600 sm:text-3xl text-xl  md:mt-11">Copyright © 2024 Digishastri. All Rights
+        Reserved</h4>
+    </div>
+  </footer>
+
+  <!-- pop-up -->
+  <div id="pop"
+    class="pop  px-3 py-11 fixed w-screen flex flex-wrap justify-center items-center h-screen top-0 left-0 z-[1123]  max-md:overflow-auto">
+    <div class="max-w-5xl flex flex-wrap items-stretch justify-center">
+      <div
+        class="sm:w-[50%] bg-zinc-800  text-center flex flex-col items-center p-12 md:p-20  justify-center w-full h-auto relative">
+        <i class="fa-regular fa-circle-xmark absolute text-3xl cursor-pointer right-2 top-2 text-white"
+          onclick="hidpop();"></i>
+        <img src="images/center/logo.png" class="md:w-56" alt="">
+        <h2 class="md:text-5xl text-3xl my-6 text-white font-medium">Know How Digi4shastri Can Help you?</h2>
+        <p class="text-xl font-bold text-white">Lets Talk: 9898237836</p>
+      </div>
+      <div class=" bg-white sm:w-[50%] w-full ">
+        <form class="p-7 md:p-11 w-full flex flex-wrap justify-between" action="">
+          <h3 class="text-2xl w-full text-red-600 sm:text-3xl font-bold mb-8">Book A free Counseling </h3>
+          <div class="mb-4  w-full space-y-2 flex flex-col">
+            <label for="name" class="text-lg font-medium">NAME</label>
+            <input type="text" name="name" id="name" class="p-3 border-2">
+          </div>
+
+
+          <div class="mb-4 space-y-2 flex flex-col w-full">
+            <label for="email" class="text-lg font-medium">EMAIL</label>
+            <input type="text" name="email" id="email" class="p-3 border-2">
+          </div>
+          <div class="mb-4 space-y-2 flex flex-col  w-full">
+            <label for="email" class="text-lg font-medium">Mobile</label>
+            <input type="text" name="phone" id="phone" class="p-3 border-2">
+          </div>
+
+          <div class="mb-4 space-y-2 flex flex-col  w-full">
+            <label for="email" class="text-lg font-medium">Choose Center</label>
+            <input type="text" name="phone" id="phone" class="p-3 border-2">
+          </div>
+
+
+
+          <button class="btn-p w-full !border-2 !border-zinc-900" type="submit">OK, I am Intrested.</button>
+          <p class="text-center mt-4">We respect your privacy.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <a class="fixed w-24 h-24 hover:animate-bounce bottom-7 z-30 right-4" href=""><img class="w-full z-30 h-auto"
+      src="images/home/call-btn.png" alt=""></a>
+
+
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="swiper.js"></script>
+  <script src="index.js"></script>
+
+
+</body>
+
+</html>

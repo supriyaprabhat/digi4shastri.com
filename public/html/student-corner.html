@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digi4shastri</title>
+    <link rel="stylesheet" href="/src/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://kit.fontawesome.com/4d509971f0.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="output.css">
+
+</head>
+
+<body x-data class="h-screen bg-white">
+    <header class="flex flex-row max-md:hidden">
+        <!-- top header -->
+        <div class="w-full">
+            <div class="flex justify-between bg-[#fedf57] w-full py-3 md:px-20 px-4 items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-[#D81B26]"></i>
+                    <p class="text-lg">+91 8289898989 |</p><i class="fa-solid fa-envelope text-[#D81B26]"></i>
+                    <p class="text-lg">Info@xyz.com</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text"
+                        class="text-lg border-none outline-none bg-transparent max-w-20 placeholder:text-black"
+                        placeholder="Search"><i class="fa-solid fa-globe text-[#D81B26]"></i>
+                    <select class="text-lg border-none outline-none bg-transparent">
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                    </select>
+                </div>
+
+                <!-- main header -->
+            </div>
+
+            <!-- main header -->
+            <nav class="nav-main  lg:px-20 px-4">
+                <img src="images/logo.png" style="max-width: 200px; width: 60vw;" alt="">
+                <ul class="nav-list md:gap-2 lg:gap-3 xl:gap-5">
+                    <li class="nav-item main">
+                        <a href="index.html">Home</a>
+                    </li>
+
+
+                    <!-- 2nd -->
+                    <li class="nav-item main">
+                        <a href="index.html">About</a>
+                    </li>
+
+                    <!-- 3rd -->
+                    <li class="nav-item main">
+                        <a href="index.html">Carporate</a>
+                    </li>
+
+                    <!-- 4th -->
+                    <li class="nav-item main">
+                        <a href="index.html">Workshope</a>
+                    </li>
+                    <!-- 5th -->
+                    <li class="nav-item main" x-data="{ open: false }" @mouseenter="open = true"
+                        @mouseleave="open = false">
+                        <a href="" @click.prevent="open = !open">Our Center</a>
+                        <ul x-show="open" x-transition:enter="submenu-enter" x-transition:leave="submenu-leave"
+                            class="submenu">
+                            <li><a href="">Center1</a></li>
+                            <li><a href="">Center2</a></li>
+                            <li><a href="">Center3</a></li>
+
+                        </ul>
+                    </li>
+                    <!-- 6th -->
+                    <li class="nav-item main" x-data="{ open: false }" @mouseenter="open = true"
+                        @mouseleave="open = false">
+                        <a href="" @click.prevent="open = !open">Courses </a>
+                        <ul x-show="open" x-transition:enter="submenu-enter" x-transition:leave="submenu-leave"
+                            class="submenu">
+                            <li><a href="">Courses1</a></li>
+                            <li><a href="">Courses2</a></li>
+                            <li><a href="">Courses3</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 7th -->
+                    <li class="nav-item main">
+                        <a href="index.html">Student Corner</a>
+                    </li>
+
+                    <!-- 8th -->
+                    <li class="nav-item main">
+                        <a href="index.html">Blogs</a>
+                    </li>
+
+                    <!-- 9th -->
+                    <li class="nav-item main">
+                        <a href="index.html">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Mobile Header  -->
+    <header class="w-full grid grid-cols-2 relative bg-[#1ABC9C] md:hidden">
+        <div class="p-5 col-span-1">
+            <a href="index.php"> <img src="images/logo.png" class="w-full max-w-44 object-contain" alt=""></a>
+        </div>
+        <div class="off-screen-menu p-5 " style="z-index:89">
+            <img src="images/logo.png" class="w-full max-w-44 object-contain mx-auto" alt="">
+            <ul class="w-full mt-2 open-dropdown">
+                <li class="hover:text-[#0C5647] py-2"><a href="index.html">Home</a></li>
+
+                <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">About</a></li>
+
+                <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Corporate</a></li>
+
+                <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Workshop</a></li>
+
+                <li class="duration-700 transition-all">
+                    <div class="flex justify-between">
+                        <a class="hover:text-[#0C5647]">Our Center</a>
+                        <p class="hamMenuDropdown p-0.5 px-1 rounded-md   duration-700 cursor-pointer">
+                            <i class="fa-solid fa-circle-chevron-down"></i>
+                        </p>
+                    </div>
+                    <ul class="hamDropdownContainer pl-5">
+                        <li><a href="" class="hover:text-[#0C5647]">center1</a></li>
+                        <li><a href="" class="hover:text-[#0C5647]">center2</a></li>
+                        <li><a href="" class="hover:text-[#0C5647]">Center1</a></li>
+
+                    </ul>
+                </li>
+                <li class="duration-700 transition-all">
+                    <div class="flex justify-between">
+                        <a class="hover:text-[#0C5647]">Courses</a>
+                        <p class="hamMenuDropdown p-0.5 px-1 rounded-md   duration-700 cursor-pointer">
+                            <i class="fa-solid fa-circle-chevron-down"></i>
+                        </p>
+                    </div>
+                    <ul class="hamDropdownContainer pl-5">
+                        <li><a href="" class="hover:text-[#0C5647]">course1</a></li>
+                        <li><a href="" class="hover:text-[#0C5647]">course2</a></li>
+                        <li><a href="" class="hover:text-[#0C5647]">Course1</a></li>
+                    </ul>
+                </li>
+                <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Student Corner</a></li>
+
+                <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Blogs</a></li>
+
+                <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Contact Us</a></li>
+            </ul>
+        </div>
+        <nav>
+            <div class="ham-menu" style="z-index: 90;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- section1 -->
+    <section class="lg:px-28 md:p-20 p-7 relative">
+        <img src="images/corner/thumb1.png" class="h-full  absolute left-0 top-0" alt="">
+        <h2 class="text-red-600 text-center font-bold md:text-6xl text-4xl">Learn Digital Marketing <br> Courses Now
+        </h2>
+    </section>
+
+    <!-- section2 -->
+    <!-- 2nd section -->
+    <section class="md:p-20 p-7 lg:px-28">
+        <div class="flex flex-wrap gap-y-8  justify-between items-stretch">
+            <div class="sm:w-[48%] md:w-[39%] w-full relative">
+                <img src="images/home/img1.png" class="w-full h-full object-cover" alt="">
+                <div class="border-2 border-red-600 absolute top-6 left-6 h-full w-full -z-10"></div>
+            </div>
+            <div class="sm:w-[48%] w-full py-11 sm:px-7">
+
+                <p class="text-xl md:text-2xl  mb-7 font-medium">Explore Digital Marketing courses that cover skills in
+                    SEO, social media strategy, and content marketing. Prepare for careers in digital advertising, brand
+                    management, and online marketing strategy.
+                </p>
+                <p class="text-lg md:text-xl">Get started in the high-growth fields of digital marketing and get
+                    professional certificate from Digi4shastri. Learn to manage digital marketing campaigns, attract and
+                    engage customers, and sell products online.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- section3 -->
+    <section class="bg-grid md:p-20 p-7 lg:px-28 flex flex-wrap justify-between relative gap-y-5">
+        <div class="sm:hidden flex gap-3 w-full cursor-pointer" onclick="showFilter();"><i
+                class="fa-solid fa-bars text-3xl font-bold"></i>
+            <h4 class="text-red-600 text-3xl sm:hidden font-semibold ">Filter By</h4>
+        </div>
+
+        <div class="sm:w-[29%] transition-all duration-300 sm:!sticky w-0  overflow-hidden max-sm:absolute sm:h-full h-auto top-4 max-sm:top-16 max-sm:bg-white left-0"
+            id="filter">
+            <h4 class="text-red-600 max-sm:hidden  font-semibold text-4xl">Filter By</h4>
+            <div class="p-3">
+                <h3 class="text-xl sm:text-2xl font-medium mb-2">Courses</h3>
+                <div class="space-y-2 text-lg">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option1" value="option1"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option1" class="text-gray-700">Option 1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option2" value="option2"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option2" class="text-gray-700">Option 2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option3" value="option3"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option3" class="text-gray-700">Option 3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option4" value="option4"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option4" class="text-gray-700">Option 4</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3">
+                <h3 class="text-xl sm:text-2xl font-medium mb-2">Tools & Software</h3>
+                <div class="space-y-2 text-lg">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option1" value="option1"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option1" class="text-gray-700">Option 1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option2" value="option2"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option2" class="text-gray-700">Option 2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option3" value="option3"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option3" class="text-gray-700">Option 3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option4" value="option4"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option4" class="text-gray-700">Option 4</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3">
+                <h3 class="text-xl sm:text-2xl font-medium mb-2">Duration</h3>
+                <div class="space-y-2 text-lg">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option1" value="option1"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option1" class="text-gray-700">Option 1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option2" value="option2"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option2" class="text-gray-700">Option 2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option3" value="option3"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option3" class="text-gray-700">Option 3</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="option4" value="option4"
+                            class="mr-2 text-blue-500 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="option4" class="text-gray-700">Option 4</label>
+                    </div>
+                </div>
+            </div>
+            <button
+                class="text-white bg-[#1ABC9C] hover:bg-black text-lg font-semibold rounded-lg duration-300 px-5 py-2 w-full my-5">Refine
+                Search</button>
+
+            <button
+                class="text-white bg-yellow-600 hover:bg-black text-lg font-semibold duration-300 rounded-lg px-5 py-2 w-full">Reset
+                Filter</button>
+        </div>
+
+        <div class="sm:w-[68%] w-full space-y-7">
+            <h3 class="text-red-600 text-2xl">Explore the Digital Marketing Course Catalog</h3>
+            <div class="flex flex-wrap justify-between gap-y-6">
+                <!-- cards -->
+                <div class="border-2 md:w-[31%] sm:w-[48%] w-full border-black bg-[#eef582] p-4 text-center rounded-xl">
+                    <div class="bg-[#1ABC9C] text-center px-3 py-4 rounded-lg">
+                        <h3 class="text-xl font-medium ">SEO</h3>
+                        <p>Master keyword research, on-page optimization, link building, content marketing, and
+                            analytics to boost website rankings and drive organic traffic.</p>
+                    </div>
+                    <h3 class="text-xl font-medium p-2">Rs 2,499</h3>
+                    <p class=" text-lg">Per Month</p>
+                    <p class="mb-4">5 users <br>Additional Users @ Rs 699? Month/ User</p>
+                    <a href=""
+                        class="text-white bg-[#1ABC9C] hover:bg-black text-lg font-semibold rounded-md duration-300 px-5 py-2 !w-full ">Select
+                        Plan</a>
+                </div>
+                <!-- cards -->
+                <div class="border-2 md:w-[31%] sm:w-[48%] w-full border-black bg-[#eef582] p-4 text-center rounded-xl">
+                    <div class="bg-[#1ABC9C] text-center px-3 py-4 rounded-lg">
+                        <h3 class="text-xl font-medium ">SEO</h3>
+                        <p>Master keyword research, on-page optimization, link building, content marketing, and
+                            analytics to boost website rankings and drive organic traffic.</p>
+                    </div>
+                    <h3 class="text-xl font-medium p-2">Rs 2,499</h3>
+                    <p class=" text-lg">Per Month</p>
+                    <p class="mb-4">5 users <br>Additional Users @ Rs 699? Month/ User</p>
+                    <a href=""
+                        class="text-white bg-[#1ABC9C] hover:bg-black text-lg font-semibold rounded-md duration-300 px-5 py-2 !w-full ">Select
+                        Plan</a>
+                </div>
+                <!-- cards -->
+                <div class="border-2 md:w-[31%] sm:w-[48%] w-full border-black bg-[#eef582] p-4 text-center rounded-xl">
+                    <div class="bg-[#1ABC9C] text-center px-3 py-4 rounded-lg">
+                        <h3 class="text-xl font-medium ">SEO</h3>
+                        <p>Master keyword research, on-page optimization, link building, content marketing, and
+                            analytics to boost website rankings and drive organic traffic.</p>
+                    </div>
+                    <h3 class="text-xl font-medium p-2">Rs 2,499</h3>
+                    <p class=" text-lg">Per Month</p>
+                    <p class="mb-4">5 users <br>Additional Users @ Rs 699? Month/ User</p>
+                    <a href=""
+                        class="text-white bg-[#1ABC9C] hover:bg-black text-lg font-semibold rounded-md duration-300 px-5 py-2 !w-full ">Select
+                        Plan</a>
+                </div>
+                <!-- cards -->
+                <div class="border-2 md:w-[31%] sm:w-[48%] w-full border-black bg-[#eef582] p-4 text-center rounded-xl">
+                    <div class="bg-[#1ABC9C] text-center px-3 py-4 rounded-lg">
+                        <h3 class="text-xl font-medium ">SEO</h3>
+                        <p>Master keyword research, on-page optimization, link building, content marketing, and
+                            analytics to boost website rankings and drive organic traffic.</p>
+                    </div>
+                    <h3 class="text-xl font-medium p-2">Rs 2,499</h3>
+                    <p class=" text-lg">Per Month</p>
+                    <p class="mb-4">5 users <br>Additional Users @ Rs 699? Month/ User</p>
+                    <a href=""
+                        class="text-white bg-[#1ABC9C] hover:bg-black text-lg font-semibold rounded-md duration-300 px-5 py-2 !w-full ">Select
+                        Plan</a>
+                </div>
+
+            </div>
+
+            <h3 class="text-red-600 text-2xl">Tools and software</h3>
+            <div class="flex flex-wrap justify-between gap-y-6">
+                <!-- cards -->
+                <div class="border-2 md:w-[31%] sm:w-[48%] w-full border-black bg-[#eef582] p-4 text-center rounded-xl">
+                    <div class="bg-[#1ABC9C] text-center px-3 py-4 rounded-lg">
+                        <h3 class="text-xl font-medium ">SEO</h3>
+                        <p>Master keyword research, on-page optimization, link building, content marketing, and
+                            analytics to boost website rankings and drive organic traffic.</p>
+                    </div>
+                    <h3 class="text-xl font-medium p-2">Rs 2,499</h3>
+                    <p class=" text-lg">Per Month</p>
+                    <p class="mb-4">5 users <br>Additional Users @ Rs 699? Month/ User</p>
+                    <a href=""
+                        class="text-white bg-[#1ABC9C] hover:bg-black text-lg font-semibold rounded-md duration-300 px-5 py-2 !w-full ">Select
+                        Plan</a>
+                </div>
+                <!-- cards -->
+                <div class="border-2 md:w-[31%] sm:w-[48%] w-full border-black bg-[#eef582] p-4 text-center rounded-xl">
+                    <div class="bg-[#1ABC9C] text-center px-3 py-4 rounded-lg">
+                        <h3 class="text-xl font-medium ">SEO</h3>
+                        <p>Master keyword research, on-page optimization, link building, content marketing, and
+                            analytics to boost website rankings and drive organic traffic.</p>
+                    </div>
+                    <h3 class="text-xl font-medium p-2">Rs 2,499</h3>
+                    <p class=" text-lg">Per Month</p>
+                    <p class="mb-4">5 users <br>Additional Users @ Rs 699? Month/ User</p>
+                    <a href=""
+                        class="text-white bg-[#1ABC9C] hover:bg-black text-lg font-semibold rounded-md duration-300 px-5 py-2 !w-full ">Select
+                        Plan</a>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section4 -->
+    <img src="images/icons/Wave.png" class="w-full h-auto" alt="">
+
+    <!-- section5 -->
+    <section class="max-w-7xl lg:px-28 md:p-20 p-7 mx-auto flex flex-wrap items-stretch">
+        <div class="md:w-[35%] bg-[#19B697] sm:w-[25%] w-full flex flex-col justify-center items-center py-20 px-6">
+            <img src="images/home/form.png" class="w-full h-auto  max-w-80 mb-7" alt="">
+            <p class="text-xl font-bold text-center">You are just a click away from shaping your future</p>
+        </div>
+        <div class="md:w-[65%] border-2 border-[#19B697] sm:w-[75%] w-full">
+            <form class="p-7 md:p-11 w-full flex flex-wrap justify-between" action="">
+                <h3 class="text-2xl w-full text-red-600 sm:text-3xl font-bold mb-8">Get Free Career Counseling.</h3>
+                <div class="mb-4 sm:w-[48%] w-full space-y-2 flex flex-col">
+                    <label for="name" class="text-lg font-medium">FIRST NAME</label>
+                    <input type="text" name="name" id="name" class="p-3 border-2">
+                </div>
+                <div class="mb-4 sm:w-[48%] w-full space-y-2 flex flex-col">
+                    <label for="name" class="text-lg font-medium">LAST NAME</label>
+                    <input type="text" name="name" id="name" class="p-3 border-2">
+                </div>
+
+                <div class="mb-4 space-y-2 flex flex-col sm:w-[48%] w-full">
+                    <label for="email" class="text-lg font-medium">EMAIL</label>
+                    <input type="text" name="email" id="email" class="p-3 border-2">
+                </div>
+                <div class="mb-4 space-y-2 flex flex-col sm:w-[48%] w-full">
+                    <label for="email" class="text-lg font-medium">Mobile</label>
+                    <input type="text" name="phone" id="phone" class="p-3 border-2">
+                </div>
+                <div class="mb-4 space-y-2 flex flex-col sm:w-[48%] w-full">
+                    <label for="email" class="text-lg font-medium">City</label>
+                    <input type="text" name="city" id="city" class="p-3 border-2">
+                </div>
+                <div class="mb-4 space-y-2 flex flex-col sm:w-[48%] w-full">
+                    <label for="email" class="text-lg font-medium">Select a time</label>
+                    <input type="text" name="time" id="time" class="p-3 border-2">
+                </div>
+
+                <div class="mb-8 w-full space-y-2 flex flex-col">
+                    <label for="name" class="text-lg font-medium">MESSAGE</label>
+                    <textarea name="message" id="message" class="p-3 border-2"></textarea>
+                </div>
+
+                <button class="btn-p w-full !border-2 !border-zinc-900" type="submit">Send Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <!-- top footer -->
+        <div class="flex gap-y-5 flex-wrap justify-between lg:p-20 md:p-14 p-8">
+            <div class="lg:w-[19%] sm:w-[32%] w-[49%]">
+                <h4 class="text-2xl font-bold mb-4">Company</h4>
+                <ul class="space-y-2">
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>About Us</a></li>
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Corporate</a></li>
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Training</a></li>
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Contact Us</a></li>
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Refer & Earn</a></li>
+                </ul>
+            </div>
+
+            <div class="lg:w-[19%] sm:w-[32%] w-[49%]">
+                <h4 class="text-2xl font-bold mb-4">Career</h4>
+                <ul class="space-y-2">
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Corporate</a></li>
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Training</a></li>
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Contact Us</a></li>
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Refer & Earn</a></li>
+                </ul>
+            </div>
+
+            <div class="lg:w-[19%] sm:w-[32%] w-[49%]">
+                <h4 class="text-2xl font-bold mb-4">Resources</h4>
+                <ul class="space-y-2">
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Corporate</a></li>
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Training</a></li>
+                    <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                                class="text-green-600 text-xl">&#11166; </span>Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="lg:w-[19%]  w-[49%]">
+                <h4 class="text-2xl font-bold mb-4">Approved by</h4>
+                <img src="images/home/foot1.png" alt="">
+
+            </div>
+
+            <div class="lg:w-[19%] w-[49%]">
+                <h4 class="text-2xl font-bold mb-4">Google Partner</h4>
+                <img src="images/home/foot2.png" alt="">
+            </div>
+
+        </div>
+
+        <div class="bg-grid md:p-20 p-7">
+            <h4 class="text-2xl font-bold mb-5">Digital Marketing Programs</h4>
+            <p class="text-md font-semibold mb-7">Post Graduation in Digital Marketing | Online Digital Marketing
+                Courses in India</p>
+            <h4 class="text-2xl font-bold mb-5">Short Term Certifications</h4>
+            <p class="text-md font-semibold mb-7">All Digital Marketing Certifications | Social Media Marketing
+                Course | SEO Course Online | Performance Marketing Course Online | Content Writing Course | E-Commerce
+                Course | Website Development Course | Email Marketing Course | Instagram Marketing Course | Conversion
+                Rate Optimisation Course | Interview Preparation Course</p>
+
+            <h4 class="text-center text-red-600 sm:text-3xl text-xl  md:mt-11">Copyright © 2024 Digishastri. All Rights
+                Reserved</h4>
+        </div>
+    </footer>
+
+
+
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="swiper.js"></script>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>

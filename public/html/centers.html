@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digi4shastri</title>
+  <link rel="stylesheet" href="/src/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://kit.fontawesome.com/4d509971f0.js" crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="output.css">
+
+
+</head>
+
+<body x-data class="h-screen bg-white">
+  <header class="flex flex-row max-md:hidden">
+    <!-- top header -->
+    <div class="w-full">
+      <div class="flex justify-between bg-[#fedf57] w-full py-3 md:px-20 px-4 items-center">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-phone text-[#D81B26]"></i>
+          <p class="text-lg">+91 8289898989 |</p><i class="fa-solid fa-envelope text-[#D81B26]"></i>
+          <p class="text-lg">Info@xyz.com</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" class="text-lg border-none outline-none bg-transparent max-w-20 placeholder:text-black"
+            placeholder="Search"><i class="fa-solid fa-globe text-[#D81B26]"></i>
+          <select class="text-lg border-none outline-none bg-transparent">
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+          </select>
+        </div>
+
+        <!-- main header -->
+      </div>
+
+      <!-- main header -->
+      <nav class="nav-main  lg:px-20 px-4">
+        <img src="images/logo.png" style="max-width: 200px; width: 60vw;" alt="">
+        <ul class="nav-list md:gap-2 lg:gap-3 xl:gap-5">
+          <li class="nav-item main">
+            <a href="index.html">Home</a>
+          </li>
+
+
+          <!-- 2nd -->
+          <li class="nav-item main">
+            <a href="index.html">About</a>
+          </li>
+
+          <!-- 3rd -->
+          <li class="nav-item main">
+            <a href="index.html">Carporate</a>
+          </li>
+
+          <!-- 4th -->
+          <li class="nav-item main">
+            <a href="index.html">Workshope</a>
+          </li>
+          <!-- 5th -->
+          <li class="nav-item main" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+            <a href="" @click.prevent="open = !open">Our Center</a>
+            <ul x-show="open" x-transition:enter="submenu-enter" x-transition:leave="submenu-leave" class="submenu">
+              <li><a href="">Center1</a></li>
+              <li><a href="">Center2</a></li>
+              <li><a href="">Center3</a></li>
+
+            </ul>
+          </li>
+          <!-- 6th -->
+          <li class="nav-item main" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+            <a href="" @click.prevent="open = !open">Courses </a>
+            <ul x-show="open" x-transition:enter="submenu-enter" x-transition:leave="submenu-leave" class="submenu">
+              <li><a href="">Courses1</a></li>
+              <li><a href="">Courses2</a></li>
+              <li><a href="">Courses3</a></li>
+            </ul>
+          </li>
+
+          <!-- 7th -->
+          <li class="nav-item main">
+            <a href="index.html">Student Corner</a>
+          </li>
+
+          <!-- 8th -->
+          <li class="nav-item main">
+            <a href="index.html">Blogs</a>
+          </li>
+
+          <!-- 9th -->
+          <li class="nav-item main">
+            <a href="index.html">Contact us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- Mobile Header  -->
+  <header class="w-full grid grid-cols-2 relative bg-[#1ABC9C] md:hidden">
+    <div class="p-5 col-span-1">
+      <a href="index.php"> <img src="images/logo.png" class="w-full max-w-44 object-contain" alt=""></a>
+    </div>
+    <div class="off-screen-menu p-5 " style="z-index:89">
+      <img src="images/logo.png" class="w-full max-w-44 object-contain mx-auto" alt="">
+      <ul class="w-full mt-2 open-dropdown">
+        <li class="hover:text-[#0C5647] py-2"><a href="index.html">Home</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">About</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Corporate</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Workshop</a></li>
+
+        <li class="duration-700 transition-all">
+          <div class="flex justify-between">
+            <a class="hover:text-[#0C5647]">Our Center</a>
+            <p class="hamMenuDropdown p-0.5 px-1 rounded-md   duration-700 cursor-pointer">
+              <i class="fa-solid fa-circle-chevron-down"></i>
+            </p>
+          </div>
+          <ul class="hamDropdownContainer pl-5">
+            <li><a href="" class="hover:text-[#0C5647]">center1</a></li>
+            <li><a href="" class="hover:text-[#0C5647]">center2</a></li>
+            <li><a href="" class="hover:text-[#0C5647]">Center1</a></li>
+
+          </ul>
+        </li>
+        <li class="duration-700 transition-all">
+          <div class="flex justify-between">
+            <a class="hover:text-[#0C5647]">Courses</a>
+            <p class="hamMenuDropdown p-0.5 px-1 rounded-md   duration-700 cursor-pointer">
+              <i class="fa-solid fa-circle-chevron-down"></i>
+            </p>
+          </div>
+          <ul class="hamDropdownContainer pl-5">
+            <li><a href="" class="hover:text-[#0C5647]">course1</a></li>
+            <li><a href="" class="hover:text-[#0C5647]">course2</a></li>
+            <li><a href="" class="hover:text-[#0C5647]">Course1</a></li>
+          </ul>
+        </li>
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Student Corner</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Blogs</a></li>
+
+        <li class="hover:text-[#0C5647] py-2"><a href="our-services.php">Contact Us</a></li>
+      </ul>
+    </div>
+    <nav>
+      <div class="ham-menu" style="z-index: 90;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+  <!-- section1 -->
+  <section
+    class="bg-grid flex flex-wrap justify-between items-center md:p-20 p-7 lg:px-28 border-t border-[#fffffff3] gap-y-14">
+    <div class="md:w-[48%] w-full max-md:text-center font-medium">
+      <img class="max-sm:w-20  max-md:mx-auto" src="images/home/trusted.png" alt="">
+      <h2 class="md:text-4xl lg:text-5xl text-3xl font-medium my-5 md:my-10">Digital Marketing Institute In Shivalik,
+        South Delhi </h2>
+
+      <h3 class="text-xl font-normal !mb-8 md:!mb-14"> <span class="text-[#19B999]"><i
+            class="fa-solid fa-graduation-cap"></i></span> 50,000 Students Trained &nbsp;| &nbsp;<span
+          class="text-[#19B999]"><i class="fa-solid fa-user-graduate"></i></span> 80% Students Placed &nbsp;|
+        &nbsp;<span class="text-[#19B999]"><i class="fa-solid fa-chalkboard-user"></i></span> 100+ Expert Mentors
+        &nbsp;| &nbsp;<span class="text-[#19B999]"><i class="fa-solid fa-trophy"></i></span> 8 Years in Industry &nbsp;|
+        &nbsp;<span class="text-[#19B999]"><i class="fa-solid fa-person-chalkboard"></i></span> 50,000 Students Trained
+        &nbsp;| &nbsp;<span class="text-[#19B999]"><i class="fa-solid fa-graduation-cap"></i></span> 50,000 Students
+        Trained &nbsp;| &nbsp;<span class="text-[#19B999]"><i class="fa-solid fa-graduation-cap"></i></span> 50,000
+        Students Trained &nbsp;| &nbsp;</h3>
+
+
+
+      <a href="" class="btn-p mx-auto !px-8 cursor-pointer ">Get 100% Job Guarantee</a>
+    </div>
+    <!-- form -->
+    <div class="md:w-[43%] w-full max-md:pr-4 max-md:py-8 max-w-2xl md:mr-4">
+
+      <div class="max-w-xl w-full relative ">
+        <form class="p-7 bg-main3 w-full sticky z-20 " action="">
+
+          <h3 class="text-xl sm:text-2xl font-bold mb-8">Get Course Brochure</h3>
+          <div class="mb-4 space-y-2 flex flex-col">
+            <label for="name" class="text-lg font-medium">NAME</label>
+            <input type="text" name="name" id="name" class="p-3 bg-[#8dc2b7]">
+          </div>
+
+          <div class="mb-4 space-y-2 flex flex-col">
+            <label for="email" class="text-lg font-medium">EMAIL</label>
+            <input type="text" name="email" id="email" class="p-3 bg-[#8dc2b7]">
+          </div>
+          <div class="mb-4 space-y-2 flex flex-col">
+            <label for="email" class="text-lg font-medium">City</label>
+            <input type="text" name="city" id="city" class="p-3 bg-[#8dc2b7]">
+          </div>
+
+          <div class="mb-8 space-y-2 flex flex-col">
+            <label for="name" class="text-lg font-medium">MESSAGE</label>
+            <textarea name="message" id="message" class="p-3 bg-[#8dc2b7]"></textarea>
+          </div>
+
+          <button class="btn-p w-full !border-2 !border-zinc-900" type="submit">Send Now</button>
+        </form>
+
+        <div class="w-full h-full rotate-180 absolute bottom-5 -right-5 z-10 bg-oran"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- section2 -->
+  <section class="md:p-24 p-9 lg:p-28 !pb-0  text-center">
+    <h2 class=" md:text-4xl text-3xl font-medium my-5 md:my-10">Digital Marketing Institute In Shivalik, South Delhi
+    </h2>
+
+    <h4 class="text-2xl text-red-600 md:text-3xl">40+ Centers</h4>
+
+    <p class="my-5 md:my-10">Our digital marketing course in South Delhi, Malviya Nagar is specifically designed to
+      cater to the needs of South Delhi residents. This course offers practical training with real-world applications,
+      ensuring that you gain the skills needed to excel in the digital marketing field.
+      If you’re looking for options in other parts of Delhi, consider our courses in other regions. For instance,
+      our digital marketing course in Pitampura is perfect for those in North Delhi, offering localized training and
+      insights.
+      Similarly, our digital marketing course in Preet Vihar caters to East Delhi residents, providing comprehensive
+      training suited to the local market.
+      For West Delhi, our digital marketing course in Rajouri Garden offers tailored content to help you thrive in the
+      digital marketing landscape.
+      If you live in Delhi NCR, specifically in Gurgaon or Noida, you can visit our centers for digital marketing
+      courses.</p>
+    <div class="w-full flex flex-wrap items-end  justify-center gap-5 md:gap-20">
+      <a href="" class="tabs max-w-max gap-3">
+        <div><i class="fa-solid fa-computer"></i></div>
+        <p>Register for Free Demo</p>
+      </a>
+
+      <div class="flex gap-2 items-center"><img src="images/home/phone-icon.png" class="scale-[-1] h-7 " alt="">
+        <h4 class="text-xl md:text-2xl">Call Us Now: +91-9123456789</h4>
+      </div>
+    </div>
+  </section>
+  <img src="images/icons/Wave.png" class="w-full" alt="">
+
+  <!-- section3 -->
+  <section class="flex flex-col items-center  md:p-20 p-9  overflow-x-hidden">
+
+    <img src="images/center/logo.png" class="w-20 md:w-28" alt="">
+    <h4 class="text-xl font-bold my-4">Asia’s Most Trusted Brand</h4>
+    <h2 class="sm:text-4xl lg:text-5xl text-3xl text-red-600 text-center font-medium ">Why Choose Digi4shastri?
+    </h2>
+    <p class="my-6 md:my-9 text-center mx-auto max-w-6xl">With more than 40 locations and 45,000+ professionally
+      educated digital marketers, Digiperform is the industry leader in digital marketing education and the only
+      business to receive recognition in three Asian nations (India, Thailand, and Singapore) for the caliber of its
+      curriculum and technology. You’ll pick a qualification that is valued & required by hiring managers in the sector.
+      After 10+2 in India, we also provide an annual certificate program in digital marketing.
+      Digiperform is already a reputable company in the media and marketing sector because it is an HT Media Partner
+      Company. Also, if you’re searching for additional locations in Delhi, we also have a number of centers that you
+      can choose from on our page Digital Marketing Course in Delhi .</p>
+
+    <div
+      class="flex flex-col justify-center relative items-center md:h-[500px] h-80 w-full max-w-5xl bg-center-page rounded-2xl z-20 !mb-11">
+      <a href="" class="youtube"><img src="images/workshop/youtube.png" class="w-12 md:w-16" alt=""></a>
+
+      <img src="images/center/thumb1.png" class="w-[30%]  right-0 -bottom-16 z-10 absolute" alt="">
+    </div>
+    <a href="" class="btn-p mx-auto !px-8 cursor-pointer ">Attend Demo Session</a>
+
+  </section>
+
+  <!-- section4 -->
+  <section class="benifit md:p-20 p-7 lg:px-28 flex flex-wrap justify-between">
+    <div class="sm:w-[39%] w-full lg:-mt-24">
+      <img class="-ml-7 md:-ml-20 lg:-ml-28" src="images/center/thumb2.png" alt="">
+
+      <div class="border-2 rounded-lg border-[#1ABC9C] p-9 sm:mt-24 mt-11">
+        <h3 class="text-2xl md:text-3xl text-[#1ABC9C]">Key Advantages: Digital Marketing as a Career</h3>
+      </div>
+    </div>
+
+    <div class="sm:w-[57%] md:w-[45%] sm:pt-20 pt-11 w-full space-y-9">
+      <h2 class="text-red-600 md:text-4xl text-3xl font-bold">Benefits of Learning Digital Marketing In South Delhi,
+        Shivalik</h2>
+      <p>South Delhi, particularly the locality of Shivalik, is swiftly gaining recognition as a burgeoning center for
+        digital marketing professionals. Nestled within the heart of the National Capital Region (NCR), Shivalik
+        presents a multitude of prospects for adept digital marketers. Despite the prominence of neighboring areas such
+        as Gurgaon and Noida, Shivalik possesses its own unique charm and is experiencing a remarkable rise in the
+        demand for digital marketing talent.</p>
+
+      <div class="p-7 border-2 border-[#1ABC9C]">
+        <p>Skill Over Degree: In Shivalik, digital marketing roles prioritize practical skills and demonstrated
+          expertise over formal degrees. Employers value candidates who possess hands-on experience with digital
+          marketing tools and platforms, such as SEO, SEM, social media management, and content creation.
+          Creative Career: Digital marketing in Shivalik offers a playground for creativity, where professionals are
+          constantly challenged to devise innovative solutions to modern marketing dilemmas. The diverse range of tasks,
+          from crafting compelling content to designing engaging campaigns, ensures that professionals never experience
+          monotony in their work. Creativity flourishes in Shivalik’s digital marketing landscape, fostering a dynamic
+          and inspiring environment for professionals to thrive.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- section5 -->
+  <section class="md:p-20 flex flex-col items-center p-7 lg:px-28 bg-grid">
+    <img src="images/center/logo.png" class=" w-20 md:w-28 mb-5" alt="">
+
+    <h2 class="sm:text-2xl lg:text-3xl text-xl text-red-600 font-bold text-center max-w-2xl mb-8">9 Key Factors: How to
+      Pick the Best Digital Marketing Institute in South Delhi, Shivalik
+    </h2>
+
+    <p class="sm:text-xl lg:text-2xl text-lg text-center max-w-2xl mb-8 font-medium">9 Key Factors: How to Pick the Best
+      Digital Marketing Institute in South Delhi, Shivalik</p>
+
+    <p class="sm:text-xl lg:text-2xl text-lg text-center max-w-2xl mb-8 md:mb-12 font-medium">So, take the time to
+      consider your options carefully, evaluate the parameters that matter most to you, and embark on your digital
+      marketing certification journey with confidence.</p>
+  </section>
+
+  <!-- slider -->
+  <section class="md:p-20 p-7 lg:px-28">
+    <div class="swiper3  w-full h-auto  overflow-hidden relative">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper ">
+        <div
+          class="swiper-slide w-full flex flex-wrap justify-around items-center gap-y-3 border-y-2 border-[#1d826e] py-12">
+          <h3 class="md:w-[31%] w-full sm:text-2xl text-xl font-bold">Factor 1: Skills Vs. Degree</h3>
+          <p class="md:w-[31%] w-[48%] sm:text-xl text-lg ">Digital Marketing Skills provide hands-on expertise, and
+            industry alignment, making them paramount for success. A Digital Marketing Degree, while valuable, may not
+            offer the same practical benefits.</p>
+
+          <p class="md:w-[31%] w-[48%] sm:text-xl text-lg ">Seeking skilled Digital Marketing Courses will emphasize
+            practical exposure allows you to apply digital marketing techniques in real-world scenarios, and readiness
+            for the job market.</p>
+        </div>
+
+        <div
+          class="swiper-slide w-full flex flex-wrap justify-around items-center gap-y-3 border-y-2 border-[#1d826e] py-12">
+          <h3 class="md:w-[31%] w-full sm:text-2xl text-xl font-bold">Factor 2: Skills Vs. Degree</h3>
+          <p class="md:w-[31%] w-[48%] sm:text-xl text-lg ">Digital Marketing Skills provide hands-on expertise, and
+            industry alignment, making them paramount for success. A Digital Marketing Degree, while valuable, may not
+            offer the same practical benefits.</p>
+
+          <p class="md:w-[31%] w-[48%] sm:text-xl text-lg ">Seeking skilled Digital Marketing Courses will emphasize
+            practical exposure allows you to apply digital marketing techniques in real-world scenarios, and readiness
+            for the job market.</p>
+        </div>
+
+        <div
+          class="swiper-slide w-full flex flex-wrap justify-around items-center gap-y-3 border-y-2 border-[#1d826e] py-12">
+          <h3 class="md:w-[31%] w-full sm:text-2xl text-xl font-bold">Factor 3: Skills Vs. Degree</h3>
+          <p class="md:w-[31%] w-[48%] sm:text-xl text-lg ">Digital Marketing Skills provide hands-on expertise, and
+            industry alignment, making them paramount for success. A Digital Marketing Degree, while valuable, may not
+            offer the same practical benefits.</p>
+
+          <p class="md:w-[31%] w-[48%] sm:text-xl text-lg ">Seeking skilled Digital Marketing Courses will emphasize
+            practical exposure allows you to apply digital marketing techniques in real-world scenarios, and readiness
+            for the job market.</p>
+        </div>
+      </div>
+
+      <div class="mt-11 text-center">
+        <div class="swiper-pagination3"></div>
+      </div>
+      <!-- <div class="flex  mt-8 justify-between z-40 w-full absolute top-[49%]  left-0">
+        <div id="slide-prev2"><i
+            class="fa-solid fa-circle-chevron-left text-5xl text-[#1ABC9C] bg-white hover:text-black rounded-full opacity-55 "></i>
+        </div>
+        <div id="slide-next2"><i
+            class="fa-solid fa-circle-chevron-right text-5xl text-[#1ABC9C] bg-white hover:text-black rounded-full opacity-55 "></i>
+        </div>
+      </div> -->
+    </div>
+    <div class="w-full flex flex-wrap items-end mt-8 justify-center gap-5 sm:gap-20">
+      <a href="" class="tabs max-w-max gap-3">
+        <p>Talk to Advisory</p>
+      </a>
+
+      <a href="" class="tabs max-w-max gap-3">
+        <p>Apply Now</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- section7 faqs -->
+  <section class="md:p-20 p-7 lg:px-28">
+    <!-- FAQ  -->
+    <div class="mb-11">
+      <h4 class="text-3xl sm:text-5xl text-red-600 font-bold">Frequently Asked Questions</h4>
+    </div>
+    <div class="faq ">
+      <div class="active faq-item p-4 mb-3 shadow-xl">
+        <div class="question">
+          <h3 class="text-xl font-bold">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </h3>
+          <i class="fa-solid fa-circle-chevron-down"></i>
+        </div>
+        <div class="answer">
+          <hr class="my-3" />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat deleniti iste facere molestias in soluta
+          sapiente maxime accusamus aliquam rerum facilis itaque consequatur reprehenderit odit quis laborum eveniet, ex
+          earum!
+          <br />
+        </div>
+      </div>
+      <div class="faq-item p-4 mb-3 shadow-xl">
+        <div class="question">
+          <h3 class="text-xl font-bold">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </h3>
+          <i class="fa-solid fa-circle-chevron-down"></i>
+        </div>
+        <div class="answer">
+          <hr class="my-3" />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat deleniti iste facere molestias in soluta
+          sapiente maxime accusamus aliquam rerum facilis itaque consequatur reprehenderit odit quis laborum eveniet, ex
+          earum!
+          <br />
+        </div>
+      </div>
+      <div class="faq-item p-4 mb-3 shadow-xl">
+        <div class="question">
+          <h3 class="text-xl font-bold">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </h3>
+          <i class="fa-solid fa-circle-chevron-down"></i>
+        </div>
+        <div class="answer">
+          <hr class="my-3" />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat deleniti iste facere molestias in soluta
+          sapiente maxime accusamus aliquam rerum facilis itaque consequatur reprehenderit odit quis laborum eveniet, ex
+          earum!
+          <br />
+        </div>
+      </div>
+      <div class="faq-item p-4 mb-3 shadow-xl">
+        <div class="question">
+          <h3 class="text-xl font-bold">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </h3>
+          <i class="fa-solid fa-circle-chevron-down"></i>
+        </div>
+        <div class="answer">
+          <hr class="my-3" />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat deleniti iste facere molestias in soluta
+          sapiente maxime accusamus aliquam rerum facilis itaque consequatur reprehenderit odit quis laborum eveniet, ex
+          earum!
+          <br />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <!-- top footer -->
+    <div class="flex gap-y-5 flex-wrap justify-between lg:p-20 md:p-14 p-8">
+      <div class="lg:w-[19%] sm:w-[32%] w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Company</h4>
+        <ul class="space-y-2">
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>About Us</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Corporate</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Training</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Contact Us</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Refer & Earn</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:w-[19%] sm:w-[32%] w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Career</h4>
+        <ul class="space-y-2">
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Corporate</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Training</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Contact Us</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Refer & Earn</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:w-[19%] sm:w-[32%] w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Corporate</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Training</a></li>
+          <li class="font-semibold hover:text-green-700 transition-all cursor-pointer"><a href=""><span
+                class="text-green-600 text-xl">&#11166; </span>Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="lg:w-[19%]  w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Approved by</h4>
+        <img src="images/home/foot1.png" alt="">
+
+      </div>
+
+      <div class="lg:w-[19%] w-[49%]">
+        <h4 class="text-2xl font-bold mb-4">Google Partner</h4>
+        <img src="images/home/foot2.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="bg-grid md:p-20 p-7 lg:px-28">
+      <h4 class="text-2xl font-bold mb-5">Digital Marketing Programs</h4>
+      <p class="text-md font-semibold mb-7">Post Graduation in Digital Marketing | Online Digital Marketing Courses in
+        India</p>
+      <h4 class="text-2xl font-bold mb-5">Short Term Certifications</h4>
+      <p class="text-md font-semibold mb-7">All Digital Marketing Certifications | Social Media Marketing Course | SEO
+        Course Online | Performance Marketing Course Online | Content Writing Course | E-Commerce Course | Website
+        Development Course | Email Marketing Course | Instagram Marketing Course | Conversion Rate Optimisation
+        Course | Interview Preparation Course</p>
+
+      <h4 class="text-center text-red-600 sm:text-3xl text-xl  md:mt-11">Copyright © 2024 Digishastri. All Rights
+        Reserved</h4>
+    </div>
+  </footer>
+
+
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="swiper.js"></script>
+  <script src="index.js"></script>
+
+
+</body>
+
+</html>
